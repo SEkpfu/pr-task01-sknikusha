@@ -46,7 +46,7 @@ int main(){
     cout << "максимальную из зарплат: " << maxzarplata << " и номер получившего ее работника: " << nomerrabmax+1 << endl;
 
     double vsay_sum_nal=0;
-    for (int i=1;i<k;++i){
+    for (int i=0;i<k;++i){
         vsay_sum_nal+=nal[i];
     }
     cout << "общую сумму налога, уплаченного всей бригадой: " << vsay_sum_nal << endl;
@@ -64,4 +64,5 @@ int main(){
     return 0;
 
 }
+
 
