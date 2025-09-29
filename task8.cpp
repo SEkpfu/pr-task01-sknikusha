@@ -53,7 +53,7 @@ int main(){
 
     cout << "номера рабочих, получивших на руки более 50000 руб: ";
     int rab_bolshe_50k=0;
-    for (int i=0;i<k;i++){
+    for (int i=0;i<k;++i){
         if((finishsalary[i])>50000){
             rab_bolshe_50k+=1;
             cout  << i+1<< " ";
@@ -64,3 +64,4 @@ int main(){
     return 0;
 
 }
+
