@@ -5,7 +5,7 @@ using namespace std;
 double minelement(const vector<double>& arr, int size){
 
     int minindex=0;
-    for (int i=0; i<size;++i){
+    for (int i=1; i<size;++i){
         if(arr[i]<arr[minindex]){
             minindex=i;
         }
@@ -17,7 +17,7 @@ double maxelement(const vector<double>& arr, int size){
 
     int maxindex=0;
     int mxelement=arr[0];
-    for (int i=0; i<size;++i){
+    for (int i=1; i<size;++i){
         if(arr[i]>arr[maxindex]){
             maxindex=i;
         }
@@ -67,3 +67,4 @@ int main(){
     return 0;
 
 }
+
