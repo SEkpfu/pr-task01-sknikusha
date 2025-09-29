@@ -10,7 +10,7 @@ int main(){
 
    
 
-   vector<double> hours(k),stavka(k),pays(k),nal(k);
+   vector<double> hours(k),stavka(k),pays(k),nal(k),finishsalary(k);
 
     for(int i=0;i<k;i++){
         cout << "введите кол-во часов работника №" << i+1 << endl;
@@ -19,15 +19,16 @@ int main(){
         cin >> stavka[i];
         pays[i]=hours[i]*stavka[i];
         nal[i]=pays[i]*0.13;
+        finishsalary[i]=pays[i]-nal[i];
 
     }
 
 
     int nomerrabmin=0;
-    double minzarplata=pays[0];
+    double minzarplata=finishsalary[0];
     for(int i=1;i<k;++i){
-        if(pays[i]<minzarplata){
-            minzarplata=pays[i];
+        if(finishsalary[i]<minzarplata){
+            minzarplata=finishsalary[i];
             nomerrabmin=i;
         }
     }
@@ -35,10 +36,10 @@ int main(){
 
 
     int nomerrabmax=0;
-    double maxzarplata=pays[0];
+    double maxzarplata=finishsalary[0];
     for(int i=1;i<k;++i){
-        if(pays[i]>maxzarplata){
-            maxzarplata=pays[i];
+        if(finishsalary[i]>maxzarplata){
+            maxzarplata=finishsalary[i];
             nomerrabmax=i;
         }
     }
@@ -53,7 +54,7 @@ int main(){
     cout << "номера рабочих, получивших на руки более 50000 руб: ";
     int rab_bolshe_50k=0;
     for (int i=0;i<k;i++){
-        if((pays[i]-nal[i])>50000){
+        if((finishsalary[i])>50000){
             rab_bolshe_50k+=1;
             cout  << i+1<< " ";
         }
@@ -61,4 +62,5 @@ int main(){
     cout << "\nВcего таких рабочих: " <<  rab_bolshe_50k;
 
     return 0;
+
 }
