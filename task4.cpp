@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void infa(int& hour,int& stavka, int& procent){
+void infa(double& hour,double& stavka, double& procent){
     cout << "кол-во отработанных часов"<<  endl;
     cin >> hour;
     
@@ -14,23 +14,24 @@ void infa(int& hour,int& stavka, int& procent){
 
 }
 
-void summa(int& hour,int& stavka, int& procent){
+void summa(double& hour,double& stavka, double& procent, double& zar_sum, double& nalog){
 
-    double zar_suma=hour*stavka+hour*stavka*(procent*0.01);
-    int nalog=(hour*stavka+hour*stavka*(procent/100))*0.13;
-    int pol_sum=(hour*stavka+hour*stavka*(procent/100))-nalog;
-
-    cout << "общая заработная сумма " << zar_suma << endl;
-    cout << "подоходный налог " << nalog << endl;
-    cout << "сумма, получаемая работником на руки " << pol_sum << endl;
+    zar_sum=hour*stavka+hour*stavka*(procent*0.01);
+    nalog=(hour*stavka+hour*stavka*(procent*0.01))*0.13;
+    double pol_sum=zar_sum-nalog;
 
 }
 
 int main(){
-    int hour, stavka, procent;
+    double hour, stavka, procent;
+    double zar_suma, nalog, pol_sum;
     cout <<"введите данные рабочего\n";
     infa(hour,stavka,procent);
-    summa( hour, stavka, procent);
+    summa(hour, stavka, procent,zar_suma,nalog);
+
+    cout << "общая заработная сумма " << zar_suma << endl;
+    cout << "подоходный налог " << nalog << endl;
+    cout << "сумма, получаемая работником на руки " << zar_suma-nalog << endl;
 
     return 0;
 }
