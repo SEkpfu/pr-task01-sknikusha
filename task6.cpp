@@ -7,12 +7,17 @@ double nalog(double hour, double stavka, double procent){
     double nal=hour*stavka+hour*stavka*(procent*0.01);
     return nal*0.13 ;
   }
- 
- 
-  double suma(double hour, double stavka, double procent){
+
+double sum(double hour, double stavka, double procent){
+    double zarplata=hour*stavka+hour*stavka*(procent*0.01);
+    return zarplata;
+}
+
+double finish(double hour, double stavka, double procent){
     double nal=nalog(hour,stavka,procent);
-    return (hour*stavka+hour*stavka*(procent*0.01))-nal;
-  }
+    double zar_sum=sum(hour,stavka,procent);
+    return zar_sum-nal;
+}
 
 
   void infa(int& hour,int& stavka, int& procent){
@@ -29,6 +34,7 @@ double nalog(double hour, double stavka, double procent){
 }
 
 int main(){
+
     int hour1, stavka1, procent1;
     int hour2, stavka2, procent2;
 
@@ -48,8 +54,8 @@ int main(){
 
     
 
-    double zarplata1 =suma(hour1,stavka1,procent1);
-    double zarplata2 =suma(hour2,stavka2,procent2);
+    double zarplata1 =finish(hour1,stavka1,procent1);
+    double zarplata2 =finish(hour2,stavka2,procent2);
 
     
 
@@ -67,8 +73,5 @@ int main(){
     if (nalog(hour2, stavka2, procent2)>50){
         cout <<"налог больше 50 "<< rab2[0]<< "-"<< rab2[rab2.length()-1]<< endl;
     }
-
-    
-    
     return 0;
 }
