@@ -16,3 +16,4 @@ int main() {
     cout << "общая заработанная ставка S= " << summ << endl;
     return 0;
 }
+
