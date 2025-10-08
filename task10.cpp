@@ -14,8 +14,6 @@ double finish(double hours,double stavka){
 }
 
 
-
-
 int main(){
     const int MONTHS=3;
     const int RAB=4;
@@ -49,7 +47,7 @@ int main(){
     double suma3;
     cout << "Общая сумма налога, удержанная у третьего работника за весь период: ";
     for (int i = 0; i < MONTHS; i++) {
-        suma3 += data[2][i][2];
+        suma3 += data[2][i][1];
     }
     cout << suma3<<endl;
 
@@ -59,7 +57,7 @@ int main(){
     for(int i=0;i<RAB;i++){
         if(data[i][2][0]>maxpays3){
             maxpays3=data[i][2][0];
-            bestrab3=i+1;
+            bestrab3=i;
         }
     }
     cout << bestrab3+1<< endl;
